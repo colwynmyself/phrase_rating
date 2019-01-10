@@ -1,12 +1,8 @@
 import { BasePhrase } from './base';
 
-class Shitshow implements BasePhrase {
+export class ShitShow extends BasePhrase {
     name = 'shitshow';
     humor = 0.8;
-    severity = 0.8;
-    importance = 0.8;
+    severity = 0.5;
+    importance = 0.6;
 }
-
-export {
-    Shitshow
-};
