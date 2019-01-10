@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: './src/ts/main.ts',
     plugins: [
-        new CleanWebpackPlugin(['public/dist']),
+        new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             template: 'src/templates/index.html'
         }),
