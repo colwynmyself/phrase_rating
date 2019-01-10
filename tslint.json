@@ -1,0 +1,32 @@
+{
+    "extends": [
+        "tslint:recommended",
+        "tslint-config-prettier"
+    ],
+    "rules": {
+        "no-submodule-imports": false,
+        "object-literal-sort-keys": false,
+        "one-variable-per-declaration": false,
+        "ordered-imports": false,
+        "no-trailing-whitespace": false,
+        "quotemark": [
+            true,
+            "single",
+            "avoid-escape"
+        ],
+        "no-unused-variable": true,
+        "interface-name": false,
+        "no-implicit-dependencies": [
+            true,
+            "dev"
+        ],
+        "variable-name": [
+            true,
+            "allow-leading-underscore",
+            "allow-pascal-case",
+            "allow-snake-case",
+            "ban-keywords",
+            "check-format"
+        ]
+    }
+}
