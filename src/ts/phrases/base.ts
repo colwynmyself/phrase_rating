@@ -12,7 +12,6 @@ export class BasePhrase {
         mode: 'markers',
         type: 'scatter',
         name: this.name,
-        text: [this.name],
         marker: { size: this.severity * 50 },
     });
 }
