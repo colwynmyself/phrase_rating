@@ -9,7 +9,7 @@
         "removeComments": false,
         "noEmitOnError": true,
         "noUnusedLocals": true,
-        "outDir": "public",
+        "outDir": "dist",
         "lib": [
             "es2017",
             "dom",
