@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/colwynmyself/phrase_rating#readme",
   "dependencies": {
+    "@types/node": "^11.12.2",
+    "axios": "^0.18.0",
     "plotly.js": "^1.43.2",
     "typescript": "^3.2.2"
   },
