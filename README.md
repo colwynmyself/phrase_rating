@@ -12,12 +12,22 @@ const hot_mess = [0.4, 0.2, 0.1];
 
 You get the idea.
 
-## Installing Dependencies
+## Frontend
+
+### Installing TypeScript Dependencies
 
 1. `npm install`
 
-## Running project
+### Running project
 
 1. `npm run build`
 2. `npm run start`
 3. Go to `localhost:8080`
+
+## Server
+
+### Installing Python Dependencies
+
+1. `pip install poetry`
+2. `pip install --upgrade jsonschema --pre` - [Related Issue](https://github.com/sdispater/poetry/issues/532)
+3. `poetry install`

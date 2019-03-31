@@ -1,3 +1,8 @@
-node_modules/
 .vscode/
-dist/
+
+# typescript
+frontend/node_modules/
+frontend/dist/
+
+# python
+*.pyc
