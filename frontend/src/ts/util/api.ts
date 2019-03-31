@@ -1,7 +1,7 @@
 import { default as axios, AxiosResponse } from 'axios';
 import { Phrase } from '../classes/phrase';
 
-const BASE_URL: string = process.env.BASE_URL || 'http://localhost:8080';
+const BASE_URL: string = process.env.BASE_URL || 'http://localhost:9200';
 
 interface PhraseItem {
     name: string;

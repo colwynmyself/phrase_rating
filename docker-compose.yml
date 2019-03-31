@@ -1,0 +1,25 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:11.1
+    environment:
+      - POSTGRES_USER=phrase_user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=phrase_db
+    networks:
+      - phrase-network
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: always
+    container_name: phrase_db
+    ports:
+      - "5400:5432"
+# Use custom network for interacting with VPN
+# https://stackoverflow.com/questions/45692255/how-make-openvpn-work-with-docker
+networks:
+  phrase-network:
+    # ipam:
+    #   config:
+    #   - subnet: 172.16.238.0/24
+volumes:
+  db_data:
