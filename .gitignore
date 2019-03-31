@@ -3,3 +3,6 @@
 # typescript
 frontend/node_modules/
 frontend/dist/
+
+# python
+*.pyc
