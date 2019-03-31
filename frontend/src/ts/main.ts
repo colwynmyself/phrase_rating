@@ -1,8 +1,9 @@
 import { getPhrases } from './util/api';
+import { Phrase } from './classes/phrase';
 import { Data, Config, Layout, newPlot } from 'plotly.js';
 
 async function main() {
-    const phrases = await getPhrases();
+    const phrases: Phrase[] = await getPhrases();
     const data: Data[] = phrases.map(phrase => phrase.getAsData());
     const layout: Partial<Layout> = {
         title: 'Phrases',
