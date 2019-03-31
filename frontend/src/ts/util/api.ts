@@ -14,7 +14,7 @@ interface PhraseResponse {
     phrases: PhraseItem[];
 }
 
-async function request(path, method='GET') {
+async function request(path: string, method='GET') {
     try {
         const url: string = `${BASE_URL}${path}`;
         const res: AxiosResponse = await axios.request({
