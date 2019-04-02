@@ -13,7 +13,9 @@ def _generate_connection_string(env):
 
 class Db:
     def __init__(self, env="development"):
-        self._engine = create_engine(_generate_connection_string(env), pool_pre_ping=True)
+        self._engine = create_engine(
+            _generate_connection_string(env), pool_pre_ping=True
+        )
         self._sessionmaker = sessionmaker(bind=self._engine, autoflush=True)
 
     def create_session(self):
