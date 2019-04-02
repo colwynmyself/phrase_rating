@@ -15,7 +15,7 @@ app = Flask(__name__)
 db = Db(ENV)
 
 
-def calculate_phrase(phrase: models.Phrase, session):
+def populate_phrase(phrase: models.Phrase, session):
     votes: List[models.Vote] = session.query(models.Vote).filter(
         models.Vote.phrase_id == phrase.id
     ).all()
@@ -33,7 +33,7 @@ def calculate_phrase(phrase: models.Phrase, session):
     importance = importance / max(len(votes), 1)
 
     return Phrase(
-        name=phrase.phrase, humor=humor, severity=severity, importance=importance
+        id=phrase.id, name=phrase.phrase, humor=humor, severity=severity, importance=importance
     )
 
 
@@ -41,7 +41,7 @@ def calculate_phrase(phrase: models.Phrase, session):
 def get_phrases():
     session = db.create_session()
 
-    phrases = [calculate_phrase(p, session) for p in session.query(models.Phrase)]
+    phrases = [populate_phrase(p, session) for p in session.query(models.Phrase)]
 
     session.close()
     response = {"phrases": [p.serialize() for p in phrases]}
@@ -67,11 +67,11 @@ def create_phrase():
         session.add(phrase)
         session.commit()
 
-    phrase_id = phrase.id
+    phrase_data = populate_phrase(phrase, session)
 
     session.close()
 
-    return jsonify({"phrase.id": phrase_id})
+    return jsonify({"phrase": phrase_data.serialize()})
 
 
 @app.route("/phrases/vote", methods=["POST"])
