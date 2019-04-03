@@ -60,6 +60,13 @@ function initializeForm() {
             humor: parseFloat(data.get('humor').toString()),
         };
 
+        if (
+            inputs.severity < 0 || inputs.severity > 1 || inputs.importance < 0 || inputs.importance > 1 || inputs.humor < 0 || inputs.humor > 1
+        ) {
+            alert('Values must be 1.0 >= val >= 0.0');
+            return;
+        }
+
         const phrase = await upsertPhrase(inputs.phrase);
         await voteOnPhrase(phrase.id, inputs.humor, inputs.importance, inputs.severity);
         await createPlot();
