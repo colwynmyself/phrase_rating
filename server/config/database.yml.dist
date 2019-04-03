@@ -1,0 +1,6 @@
+development:
+  user: phrase_user
+  pass: ''
+  name: phrase_db
+  host: 127.0.0.1
+  port: 5400

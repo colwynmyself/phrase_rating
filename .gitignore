@@ -6,3 +6,4 @@ frontend/dist/
 
 # python
 *.pyc
+server/config/*.yml
